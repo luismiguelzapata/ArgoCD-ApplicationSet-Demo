@@ -5,7 +5,10 @@ metadata:
   namespace: argocd
 spec:
   syncPolicy:
-    preserveResourcesOnDeletion: true
+    preserveResourcesOnDeletion:
+      - group: argoproj.io
+        kind: Application
+        #name: "{{metadata.name}}"
   generators:
   - list:
       elements:
@@ -17,6 +20,12 @@ spec:
       # will generate applications with different names for example (dev-color-app, test-color-app, etc..)
       name: '{{namespace}}-color-app'
     spec:
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - Validate=true
       # applications will be in default project for argocd
       project: default
       source:
