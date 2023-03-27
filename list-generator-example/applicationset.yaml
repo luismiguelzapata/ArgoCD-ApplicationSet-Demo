@@ -5,9 +5,9 @@ metadata:
   namespace: argocd
 spec:
   syncPolicy:
-    preserveResourcesOnDeletion:
-      - group: argoproj.io
-        kind: Application
+    preserveResourcesOnDeletion: true
+      #- group: argoproj.io
+      #  kind: Application
         #name: "{{metadata.name}}"
   generators:
   - list:
