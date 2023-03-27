@@ -4,6 +4,8 @@ metadata:
   name: color-applicaitonset
   namespace: argocd
 spec:
+  syncOptions:
+    preserveResourcesOnDeletion: true
   generators:
   - list:
       elements:
@@ -15,14 +17,13 @@ spec:
       # will generate applications with different names for example (dev-color-app, test-color-app, etc..)
       name: '{{namespace}}-color-app'
     spec:
-      syncPolicy:   
-        preserveResourcesOnDeletion: true   
-        automated:     
-          selfHeal: true   
-          prune: true
-        syncOptions:     
-          - Validate=true     
+      syncPolicy:
+        syncOptions:
           - CreateNamespace=true
+          - preserveResourcesOnDeletion
+        automated:
+          selfHeal: true
+          prune: true
       # applications will be in default project for argocd
       project: default
       source:
