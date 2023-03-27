@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: amralaayassen/helm-app
+  repository: luismiguelzapata/helm-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "qa"
