@@ -13,7 +13,7 @@ spec:
           - path: matrix/*/*/
           #- path: matrix/*/providers/*/*
 
-          - path: matrix/templates/*
+          - path: matrix/templates
             exclude: true
           
           - path: matrix/appset
