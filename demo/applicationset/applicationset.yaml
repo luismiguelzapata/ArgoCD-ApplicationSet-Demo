@@ -47,8 +47,8 @@ spec:
           - CreateNamespace=true
       destination:
         server: '{{metadata.annotations.server}}'
-        namespace: argocd-apps-{{metadata.labels.environment}}-{{metadata.labels.provider}}
+        namespace: '{{path[2]}}/{{path.basename}}'
       destination:
         # specify different destinations
-        namespace: "{{path[2]}}/{{path.basename}}-ns"
+        namespace: "{{path[2]}}/{{path.basename}}"
         server: https://kubernetes.default.svc
