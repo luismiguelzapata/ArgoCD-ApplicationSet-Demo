@@ -17,6 +17,6 @@ spec:
       - ApplyOutOfSyncOnly=true
       - CreateNamespace=true
   source:
-    repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
-    path: pruebas
+    repoURL: https://github.com/luismiguelzapata/argocd-example-apps.git
+    path: kustomize-guestbook
     targetRevision: HEAD
