@@ -10,7 +10,7 @@ spec:
         revision: HEAD
         directories:
           # here it will read the paths under configs and the subpaths under the config paths
-          - path: matrix/*/env/*
+          - path: matrix/*/*/*
           #- path: matrix/*/providers/*/*
           - path: matrix/templates
             exclude: true
@@ -24,7 +24,7 @@ spec:
       namespace: argocd
       # you can use the path strings with / delimiter as variables
       #name: "{{path[1]}}-{{path.basename}}"
-      name: "{{path[1]}}-{{path[2]}}-{{path[3]}}"
+      name: "{{path[1]}}-aqui-{{path[3]}}"
     spec:
       project: default
       source:
