@@ -31,7 +31,7 @@ spec:
         automated:
           prune: true
         syncOptions:
-          - #ApplyOutOfSyncOnly=true
+          - ApplyOutOfSyncOnly=true
           - CreateNamespace=true
       destination:
         # specify different destinations
