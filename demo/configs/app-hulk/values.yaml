@@ -1,6 +1,6 @@
-namespaces:
-  - "{{path[2]}}/{{path.basename}}-prod"
-  - "{{path[2]}}/{{path.basename}}-staging"
-  - "{{path[2]}}/{{path.basename}}-qa"
+# namespaces:
+#   - "{{path[2]}}/{{path.basename}}-prod"
+#   - "{{path[2]}}/{{path.basename}}-staging"
+#   - "{{path[2]}}/{{path.basename}}-qa"
 
 name: hulky
