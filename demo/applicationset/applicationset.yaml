@@ -30,6 +30,9 @@ spec:
       syncPolicy:
         automated:
           prune: true
+          syncOptions:
+            - #ApplyOutOfSyncOnly=true
+            - CreateNamespace=true
       destination:
         # specify different destinations
         namespace: "{{path.basename}}"
