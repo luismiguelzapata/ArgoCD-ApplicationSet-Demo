@@ -4,6 +4,7 @@
 
 replicaCount: 1
 
+name: valencia-staging
 image:
   repository: amralaayassen/helm-app
   pullPolicy: IfNotPresent
