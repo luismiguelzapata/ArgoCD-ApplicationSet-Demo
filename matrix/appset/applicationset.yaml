@@ -22,10 +22,10 @@ spec:
                 #   exclude: true
                 #- path: matrix/*/env/*
                 #- path: matrix/*/provider/*
-          - clusters:
-              selector:
-                matchLabels:
-                  deploy: "yes"
+          # - clusters:
+          #     selector:
+          #       matchLabels:
+          #         deploy: "yes"
         
   template:
     metadata:
