@@ -10,7 +10,13 @@ spec:
     namespace: kustomize-guestbook
     server: https://kubernetes.default.svc
   project: default
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
   source:
-    path: kustomize-guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps.git
+    path: pruebas
     targetRevision: HEAD
