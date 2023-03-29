@@ -21,9 +21,9 @@ spec:
       name: '{{namespace}}-color-app'
     spec:
       syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
+        automated: {}
+          #prune: true
+          #selfHeal: true
         syncOptions:
           - Validate=true
       # applications will be in default project for argocd
