@@ -3,4 +3,4 @@ namespaces:
   - "{{path[2]}}/{{path.basename}}"-staging
   - "{{path[2]}}/{{path.basename}}"-qa
 
-name: hulk
+name: hulky
