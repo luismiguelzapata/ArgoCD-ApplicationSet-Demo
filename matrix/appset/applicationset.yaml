@@ -35,9 +35,8 @@ spec:
           valueFiles:
             # - "{{path[1]}}/{{path.basename}}/values.yaml"
             # - "{{path[1]}}/values.yaml" 
-            - "{{path[1]}}/{{path.basename}}/values.yaml"
-            - "{{path[1]}}/{{path.basename}}/providers/{{path[2]}}/values.yaml"
-            - "{{path[1]}}/values.yaml" 
+            - "{{path[1]}}/{{path[2]}}/values.yaml"
+            - "{{path[1]}}/{{path[2]}}/providers//{{path.basename}}/values.yaml"
         path: matrix
         repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
         targetRevision: HEAD
@@ -49,5 +48,5 @@ spec:
           - CreateNamespace=true
       destination:
         # specify different destinations
-        namespace: "{{path.basename}}"
+        namespace: "{{path[2]}}-ns"
         server: https://kubernetes.default.svc
