@@ -11,19 +11,20 @@ spec:
         directories:
           # here it will read the paths under configs and the subpaths under the config paths
           - path: matrix/*/env/*
-          - path: matrix/*/providers/*/*
+          #- path: matrix/*/providers/*/*
           - path: matrix/templates
             exclude: true
           - path: matrix/appset
             exclude: true
           #- path: matrix/*/env/*
           #- path: matrix/*/provider/*
+        
   template:
     metadata:
       namespace: argocd
       # you can use the path strings with / delimiter as variables
       #name: "{{path[1]}}-{{path.basename}}"
-      name: "{{path[1]}}-{{path[3]}}-{{path[4]}}"
+      name: "{{path[1]}}-{{path[2]}}-{{path[3]}}"
     spec:
       project: default
       source:
