@@ -4,8 +4,8 @@ metadata:
   name: demo-helm-common-chart
   namespace: argocd
 spec: 
-  generators:
-    - matrix:
+  # generators:
+  #   - matrix:
         generators:
           - git:
               repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
