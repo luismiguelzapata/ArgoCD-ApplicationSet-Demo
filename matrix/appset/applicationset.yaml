@@ -4,7 +4,7 @@ metadata:
   name: demo-helm-common-chart
   namespace: argocd
 spec: 
-  generetors:  
+  generetors:
   - matrix:
       generators:
         - git:
@@ -21,7 +21,12 @@ spec:
               # - path: matrix/*/env
               #   exclude: true
               #- path: matrix/*/env/*
-              #- path: matrix/*/provider/*       
+              #- path: matrix/*/provider/*
+        - clusters:
+            selector:
+              matchLabels:
+                deploy: "yes"
+        
   template:
     metadata:
       namespace: argocd
