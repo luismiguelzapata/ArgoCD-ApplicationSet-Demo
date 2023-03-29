@@ -10,12 +10,24 @@ spec:
         revision: HEAD
         directories:
           # here it will read the paths under configs and the subpaths under the config paths
-          - path: demo/configs/*/*
+          - path: demo/configs/*/*/*
+  generators:
+    - matrix:
+        generators:
+          - clusters:
+              selector:
+                matchLabels:
+                  deploy: "yes" # label que indicamos para que solamente genere las apps de los clusters que existen
+          - git:
+              repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
+              revision: HEAD
+              directories:
+              - path: 'demo/configs/*'
   template:
     metadata:
       namespace: argocd
       # you can use the path strings with / delimiter as variables
-      name: "{{path[2]}}-{{path.basename}}"
+      name: "{{path[3]}}-{{path.basename}}"
     spec:
       project: default
       source:
@@ -34,6 +46,9 @@ spec:
           - ApplyOutOfSyncOnly=true
           - CreateNamespace=true
       destination:
+        server: '{{metadata.annotations.server}}'
+        namespace: argocd-apps-{{metadata.labels.environment}}-{{metadata.labels.provider}}
+      destination:
         # specify different destinations
-        namespace: "{{path.basename}}"
+        namespace: "{{path[2]}}/{{path.basename}}-ns"
         server: https://kubernetes.default.svc
