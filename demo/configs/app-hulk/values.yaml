@@ -1,6 +1,6 @@
 namespaces:
-  - prod
-  - staging
-  - qa
+  - "{{path[2]}}/{{path.basename}}"-prod
+  - "{{path[2]}}/{{path.basename}}"-staging
+  - "{{path[2]}}/{{path.basename}}"-qa
 
 name: hulk
