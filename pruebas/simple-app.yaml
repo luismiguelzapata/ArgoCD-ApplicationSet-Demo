@@ -17,6 +17,6 @@ spec:
       - ApplyOutOfSyncOnly=true
       - CreateNamespace=true
   source:
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
     path: pruebas
     targetRevision: HEAD
