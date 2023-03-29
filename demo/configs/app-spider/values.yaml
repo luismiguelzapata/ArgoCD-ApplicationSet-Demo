@@ -1,5 +1,5 @@
 namespaces:
-  - prod
-  - staging
+#  - prod
+#  - staging
   - qa
 name: spider
