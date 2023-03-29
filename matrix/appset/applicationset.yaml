@@ -11,6 +11,7 @@ spec:
         directories:
           # here it will read the paths under configs and the subpaths under the config paths
           - path: matrix/*/env/*
+          - path: matrix/*/providers/*
           - path: matrix/templates
             exclude: true
           - path: matrix/appset
@@ -34,7 +35,7 @@ spec:
             - "{{path[1]}}/{{path.basename}}/env/{{path[2]}}/values.yaml"
             - "{{path[1]}}/{{path.basename}}/providers/{{path[2]}}/values.yaml"
             - "{{path[1]}}/values.yaml" 
-        path: demo
+        path: matrix
         repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
         targetRevision: HEAD
       syncPolicy:
