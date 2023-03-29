@@ -26,7 +26,7 @@ spec:
       namespace: argocd
       # you can use the path strings with / delimiter as variables
       #name: "{{path[1]}}-{{path.basename}}"
-      name: "{{path[1]}}-{{path[2]}}"
+      name: "{{path[1]}}-{{path[2]}}-{{path.basename}}"
     spec:
       project: default
       source:
