@@ -15,7 +15,7 @@ spec:
     metadata:
       namespace: argocd
       # you can use the path strings with / delimiter as variables
-      name: "nombre-{{path[2]}}-{{path[2].basename}}"
+      name: "nombre-{{path[2]}}-{{path.basename}}"
     spec:
       project: default
       source:
