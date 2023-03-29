@@ -1,4 +1,4 @@
-namespaces:
-  - prod
-  - staging
+# namespaces:
+#   - prod
+#   - staging
 name: iron
