@@ -11,19 +11,6 @@ spec:
         directories:
           # here it will read the paths under configs and the subpaths under the config paths
           - path: gitops-p4/essab-001/*/*/*/*
-          #- path: gitops-p4/*/providers/*/*
-          # - path: gitops-p4/templates/*
-          #   exclude: true
-          # - path: gitops-p4/appset
-          #   exclude: true
-          # - path: matrix/essab-001/*
-          #   exclude: true
-          # - path: matrix/essab-002/*
-          #   exclude: true
-          # - path: matrix/*/env
-          #   exclude: true
-          #- path: matrix/*/env/*
-          #- path: matrix/*/provider/*
         
   template:
     metadata:
