@@ -9,7 +9,11 @@ spec:
         repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
         revision: HEAD
         directories:
-          # here it will read the paths under configs and the subpaths under the config paths
+          # *: essab-001
+          # */*: nombre del micro [micro1, micro2, micro3]
+          # */*/*: entorno [int, pre, pro]
+          # */*/*/*: carpeta-provider
+          # */*/*/*/*: provider [eks, ocp]
           - path: gitops-p4/essab-001/*/*/*/*
         
   template:
@@ -26,10 +30,10 @@ spec:
           valueFiles:
             # - "{{path[1]}}/{{path.basename}}/values.yaml"
             # - "{{path[1]}}/values.yaml" 
-            - "{{path[1]}}/values.yaml"
-            - "{{path[1]}}/{{path[2]}}/values.yaml"
-            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/values.yaml"
-            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/providers/{{path.basename}}/values.yaml"
+            - "{{path[1]}}/values.yaml" #essab-001/values.yaml
+            - "{{path[1]}}/{{path[2]}}/values.yaml" #essab-001/app-toledo/values.yaml
+            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/values.yaml" #essab-001/app-toledo/staging/values.yaml
+            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/providers/{{path.basename}}/values.yaml" #essab-001/app-toledo/staging/providers/ocp/values.yaml
         path: gitops-p4
         repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
         targetRevision: HEAD
@@ -43,3 +47,7 @@ spec:
         # specify different destinations
         namespace: "{{path[3]}}-ns"
         server: https://kubernetes.default.svc
+
+        # https://192.168.49.2:8443 - minikube
+        # https://192.168.58.2:8443 - minikube-aws
+        # https://192.168.67.2:8443 - minikube-ocp
