@@ -15,9 +15,9 @@ spec:
           # */*/*/*: carpeta-provider
           # */*/*/*/*: provider [eks, ocp]
           - path: gitops-p4/*/*/*/*/*
-          - path: gitops-p4/essab-002/*
+          - path: gitops-p4/essab-002
             exclude: true
-          - path: gitops-p4/essab-003/*
+          - path: gitops-p4/essab-003
             exclude: true
         
   template:
