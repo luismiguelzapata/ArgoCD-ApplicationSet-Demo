@@ -6,7 +6,7 @@ metadata:
 spec: 
   generators:
     - git:
-        repoURL: https://gitlab.com/luismzapata/essab-001.git
+        repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
         revision: HEAD
         directories:
           # *: essab-001
@@ -39,7 +39,7 @@ spec:
             - "{{path[1]}}/{{path[2]}}/{{path[3]}}/values.yaml" #essab-001/app-toledo/staging/values.yaml
             - "{{path[1]}}/{{path[2]}}/{{path[3]}}/providers/{{path.basename}}/values.yaml" #essab-001/app-toledo/staging/providers/ocp/values.yaml
         path: gitops-p4
-        repoURL: https://gitlab.com/luismzapata/essab-001.git
+        repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
         targetRevision: HEAD
       syncPolicy:
         automated:
