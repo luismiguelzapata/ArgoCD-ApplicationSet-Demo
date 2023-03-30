@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
     targetRevision: HEAD
-    path: proteo4/micros
+    path: proteo4/essab-001/micros
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
