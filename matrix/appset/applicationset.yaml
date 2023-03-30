@@ -16,6 +16,10 @@ spec:
             exclude: true
           - path: matrix/appset
             exclude: true
+          - path: matrix/essab-001
+            exclude: true
+          - path: matrix/essab-002
+            exclude: true
           # - path: matrix/*/env
           #   exclude: true
           #- path: matrix/*/env/*
