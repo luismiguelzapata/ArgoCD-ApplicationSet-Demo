@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
-    revision: HEAD
+    targetRevision: HEAD
     path: proteo4/micros
   destination:
     server: https://kubernetes.default.svc
