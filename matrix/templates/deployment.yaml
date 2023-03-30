@@ -43,5 +43,5 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: 'abc-settings' 
+            name: '{{path[1]}}-{{ .Values.providername }}'-settings 
        
