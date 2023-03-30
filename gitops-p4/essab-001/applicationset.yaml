@@ -7,12 +7,12 @@ spec:
   generators:
     - list:
         elements:
-        - repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
+        - repoURL: https://gitlab.com/luismzapata/essab-001.git
           revision: HEAD
           directories:
             - path: gitops-p4/essab-001/*/*/*/*
 
-        - repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
+        - repoURL: https://gitlab.com/luismzapata/essab-002.git
           revision: HEAD
           directories:
             - path: gitops-p4/essab-002/*/*/*/*
