@@ -41,6 +41,7 @@ spec:
             # - "{{path[1]}}/values.yaml" 
             - "{{path[1]}}/values.yaml"
             - "{{path[1]}}/{{path[2]}}/values.yaml"
+            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/values.yaml"
             - "{{path[1]}}/{{path[2]}}/{{path[3]}}/providers/{{path.basename}}/values.yaml"
         path: newmatrix
         repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
