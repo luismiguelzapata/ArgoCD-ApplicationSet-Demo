@@ -5,16 +5,25 @@ metadata:
   namespace: argocd
 spec: 
   generators:
-  - list:
-      elements:
-        - repoURL: https://gitlab.com/luismzapata/essab-001.git
-          targetRevision: HEAD
-          path: gitops-p4/essab-001/
+  # - list:
+  #     elements:
+  #       - repoURL: https://gitlab.com/luismzapata/essab-001.git
+  #         targetRevision: HEAD
+  #         path: gitops-p4/essab-001/
 
-        - repoURL: https://gitlab.com/luismzapata/essab-002.git
-          targetRevision: HEAD
-          path: gitops-p4/essab-002/
-    
+  #       - repoURL: https://gitlab.com/luismzapata/essab-002.git
+  #         targetRevision: HEAD
+  #         path: gitops-p4/essab-002/
+    - git:
+        repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
+        revision: HEAD
+        directories:
+          # *: essab-001
+          # */*: nombre del micro [micro1, micro2, micro3]
+          # */*/*: entorno [int, pre, pro]
+          # */*/*/*: carpeta-provider
+          # */*/*/*/*: provider [eks, ocp]
+          - path: gitops-p4/essab-001/*/*/*/*
   template:
     metadata:
       namespace: argocd
