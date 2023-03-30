@@ -39,6 +39,7 @@ spec:
           valueFiles:
             # - "{{path[1]}}/{{path.basename}}/values.yaml"
             # - "{{path[1]}}/values.yaml" 
+            - "{{path[1]}}/values.yaml"
             - "{{path[1]}}/{{path[2]}}/{{path[3]}}/values.yaml"
             - "{{path[1]}}/{{path[2]}}/{{path[3]}}/providers/{{path.basename}}/values.yaml"
         path: matrix
