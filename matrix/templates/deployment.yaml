@@ -43,5 +43,5 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: '{{path[1]}}-{{path[2]}}-{{path.basename}}-settings'     
+            name: 'name: {{ include "sample-app.fullname" . }}-settings'     
        
