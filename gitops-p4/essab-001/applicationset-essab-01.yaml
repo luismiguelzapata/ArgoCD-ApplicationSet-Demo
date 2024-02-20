@@ -1,0 +1,67 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: essab-001-appset
+  namespace: argocd
+spec: 
+  generators:
+    # - list:
+    #     elements:
+    #       - repoURL: https://gitlab.com/luismzapata/essab-001.git
+    #         targetRevision: HEAD
+    #         path: gitops-p4/essab-001/
+
+    #       - repoURL: https://gitlab.com/luismzapata/essab-002.git
+    #         targetRevision: HEAD
+    #         path: gitops-p4/essab-002/
+
+    - git:
+        repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
+        revision: HEAD
+        directories:
+          # *: essab-001
+          # */*: nombre del micro [micro1, micro2, micro3]
+          # */*/*: entorno [int, pre, pro]
+          # */*/*/*: carpeta-provider
+          # */*/*/*/*: provider [eks, ocp]
+          - path: gitops-p4/essab-001/*/*/*/*
+          - path: gitops-p4/essab-002
+            exclude: true
+          - path: gitops-p4/essab-003
+            exclude: true
+  template:
+    metadata:
+      namespace: argocd
+      # you can use the path strings with / delimiter as variables
+      #name: "{{path[1]}}-{{path.basename}}"
+      name: "{{path[1]}}-{{path[2]}}-{{path[3]}}-{{path.basename}}"
+    spec:
+      project: default
+      source:
+        helm:
+          # specify different values file based on directories variables
+          valueFiles:
+            # - "{{path[1]}}/{{path.basename}}/values.yaml"
+            # - "{{path[1]}}/values.yaml" 
+            - "{{path[1]}}/values.yaml" #essab-001/values.yaml
+            - "{{path[1]}}/{{path[2]}}/values.yaml" #essab-001/app-toledo/values.yaml
+            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/values.yaml" #essab-001/app-toledo/staging/values.yaml
+            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/providers/{{path.basename}}/values.yaml" #essab-001/app-toledo/staging/providers/ocp/values.yaml
+        path: gitops-p4
+        repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          prune: true
+        syncOptions:
+          - ApplyOutOfSyncOnly=true
+          - CreateNamespace=true
+      destination:
+        # specify different destinations
+        namespace: "{{path[3]}}-ns"
+        server: https://kubernetes.default.svc
+        #server: {{ .Values.deployserver }} https://kubernetes.default.svc
+
+        # https://192.168.49.2:8443 - minikube
+        # https://192.168.58.2:8443 - minikube-aws
+        # https://192.168.67.2:8443 - minikube-ocp
