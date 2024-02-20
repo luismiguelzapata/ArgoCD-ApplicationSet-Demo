@@ -1,1 +1,2 @@
-name: micro-xyz
+helm-master:
+  name: micro-xyz

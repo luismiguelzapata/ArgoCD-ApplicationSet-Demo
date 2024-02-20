@@ -1,2 +1,3 @@
-providername: eks-staging-toledo
-velocidad: rapido
+helm-master:
+  providername: eks-staging-toledo
+  velocidad: rapido

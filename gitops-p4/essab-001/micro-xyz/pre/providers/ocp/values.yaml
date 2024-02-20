@@ -1,3 +1,4 @@
-providername: ocp-pre-micro-xyz
-product: redhat
+helm-master:
+  providername: ocp-pre-micro-xyz
+  product: redhat
 #deployserver: cluster-ocp-pre
