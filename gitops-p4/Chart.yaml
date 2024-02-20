@@ -32,4 +32,4 @@ appVersion: 1.0.0
 dependencies:
   - name: helm-master
     version: "^1.0.x-SNAPSHOT"
-    repository: "https://luismiguelzapata.github.io/helm-repository/docs"
+    repository: "https://luismiguelzapata.github.io/helm-repository/"
