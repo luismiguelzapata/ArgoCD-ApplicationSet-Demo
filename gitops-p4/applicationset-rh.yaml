@@ -33,20 +33,20 @@ spec:
     metadata:
       namespace: argocd
       # you can use the path strings with / delimiter as variables
-      #name: "{{path[1]}}-{{path.basename}}"
-      name: "{{path[1]}}-{{path[2]}}-{{path[3]}}-{{path.basename}}"
+      #name: "essab-01-{{path.basename}}"
+      name: "essab-01-micro-abc-{{path[3]}}-{{path.basename}}"
     spec:
       project: default
       source:
         helm:
           # specify different values file based on directories variables
           valueFiles:
-            # - "{{path[1]}}/{{path.basename}}/values.yaml"
-            # - "{{path[1]}}/values.yaml" 
-            - "{{path[1]}}/values.yaml" #essab-001/values.yaml
-            - "{{path[1]}}/{{path[2]}}/values.yaml" #essab-001/app-toledo/values.yaml
-            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/values.yaml" #essab-001/app-toledo/staging/values.yaml
-            - "{{path[1]}}/{{path[2]}}/{{path[3]}}/providers/{{path.basename}}/values.yaml" #essab-001/app-toledo/staging/providers/ocp/values.yaml
+            # - "essab-01/{{path.basename}}/values.yaml"
+            # - "essab-01/values.yaml" 
+            - "essab-01/values.yaml" #essab-001/values.yaml
+            - "essab-01/micro-abc/values.yaml" #essab-001/app-toledo/values.yaml
+            - "essab-01/micro-abc/{{path[3]}}/values.yaml" #essab-001/app-toledo/staging/values.yaml
+            - "essab-01/micro-abc/{{path[3]}}/providers/{{path.basename}}/values.yaml" #essab-001/app-toledo/staging/providers/ocp/values.yaml
         path: gitops-p4
         repoURL: https://github.com/luismiguelzapata/ArgoCD-ApplicationSet-Demo.git
         targetRevision: HEAD

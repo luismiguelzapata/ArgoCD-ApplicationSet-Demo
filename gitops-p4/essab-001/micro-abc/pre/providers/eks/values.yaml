@@ -1,3 +1,4 @@
-providername: eks-pre-micro-abc
-product: amazon
-#deployserver: cluster-eks-pre
+helm-master:
+  providername: eks-pre-micro-abc
+  product: amazon
+  #deployserver: cluster-eks-pre

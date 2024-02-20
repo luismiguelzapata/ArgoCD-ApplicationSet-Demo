@@ -1,1 +1,2 @@
-name: micro-abc
+helm-master:
+  name: micro-abc
